@@ -1,22 +1,43 @@
+.Desktop-Dashboard {
+  width: 1440px;
+  height: 1115px;
+}
+
+.App-Header {
+  width: 1440px;
+  height: 72px;
+  background-color: #f7f7f7;
+}
+
 .App {
+  font-family: sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 1440px;
+  min-height: 1027px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #e2e2e2;
 }
 
-.App-link {
-  color: #09d3ac;
+.gpa-card {
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  margin: 64px 20px 0px 260px;
+}
+
+.progress-card {
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  margin: 64px 20px 0px 20px;
+}
+
+.streaks-card {
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  margin: 64px 260px 0px 20px;
 }
