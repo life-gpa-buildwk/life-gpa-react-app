@@ -3,6 +3,7 @@ import GPA from "./Components/CardComponents/GPACard.js";
 import Progress from "./Components/CardComponents/ProgressCard.js";
 import Streaks from "./Components/CardComponents/StreaksCard.js";
 
+import './styles/index.scss';
 import "./App.css";
 
 export default function App() {
