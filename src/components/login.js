@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {AxiosWithAuth} from './axiosWithAuth';
 
 const Login = props => {
     const [loginInfo, setLoginInfo] = useState({
@@ -10,7 +9,7 @@ const Login = props => {
 
 
     const onChange = (event) => {
-        setLoginInfo({...loginInfo,[event.target.name]: event.target.value });
+        setLoginInfo({ ...loginInfo, [event.target.name]: event.target.value });
     }
 
     const handleSubmit = (event) => {
@@ -26,24 +25,32 @@ const Login = props => {
     }
 
     return (
-        <form onSubmit={handleSubmit}> 
-            <label for="username"><b>Username</b></label>
-            <input
-                type="text"
-                placeholder="Enter Username"
-                name="username"
-                onChange={onChange}
-                required />
+        <div className='login-box'>
+            <div className="login-form">
+                <div>
+                    <h1>Log In</h1>
+                    <p>Welcome back. Don’t have an account yet? <span> Sign up </span></p>
+                    <form onSubmit={handleSubmit}>
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            placeholder="Enter Username"
+                            name="username"
+                            onChange={onChange}
+                            required />
 
-            <label for="password"><b>Password</b></label>
-            <input type="password"
-                placeholder="Enter Password"
-                name="password"
-                onChange={onChange}
-                required />
+                        <label for="password">Password</label>
+                        <input type="password"
+                            placeholder="Enter Password"
+                            name="password"
+                            onChange={onChange}
+                            required />
 
-            <button type="submit">Login</button>
-        </form>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     )
 }
 

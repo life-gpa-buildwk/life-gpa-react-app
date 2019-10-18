@@ -1,0 +1,30 @@
+.App {
+    display: flex;
+    justify-content: space-between;
+    min-height: 700px;
+    background: #e2e2e2;
+    flex-flow: column;
+    footer {
+        width: 100%;
+        height: 88px;
+        background-color: #474747;
+        display: flex;
+        align-items: center;
+        p {
+            margin-left: 260px;
+            width: 361px;
+            height: 22px;
+            font-family: OpenSans;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.48px;
+            color: #ffffff;
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}
