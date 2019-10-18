@@ -34,14 +34,12 @@ const Login = props => {
                         <label for="username">Username</label>
                         <input
                             type="text"
-                            placeholder="Enter Username"
                             name="username"
                             onChange={onChange}
                             required />
 
                         <label for="password">Password</label>
                         <input type="password"
-                            placeholder="Enter Password"
                             name="password"
                             onChange={onChange}
                             required />
