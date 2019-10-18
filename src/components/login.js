@@ -13,15 +13,8 @@ const Login = props => {
     }
 
     const handleSubmit = (event) => {
-        // console.log(loginInfo);
-        // event.preventDefault();
-        // AxiosWithAuth()
-        // .post('/login',loginInfo)
-        // .then(res => {
-        //     localStorage.setItem('token', res.data.payload);
-        //     props.history.push('friendsList');
-        // })
-        // .catch(err => console.log(err));
+        // use action from loginActions.js to login 
+        //something like login(loginInfo)
     }
 
     return (
