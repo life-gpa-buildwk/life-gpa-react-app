@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const SignupForm = (props) => {
+
+    const [userInfo, setUserInfo] = useState({
+            userAttributes:
+            {
+                username: "",
+                password: "",
+                fullname: "",
+                email: "",
+                userImgUrl: ""
+            }
+        })
+
+    const onChangeHandler = (e) =>{
+        setUserInfo({ ...userInfo, [e.target.name]: e.target.value })
+    }
+
     return (
         <div className="signup-container">
             <div className="signup-form">
@@ -13,19 +29,25 @@ const SignupForm = (props) => {
                         <div className="name">
                             <div className="first">
                                 <label htmlFor="firstName">First name</label>
-                                <input type="text" name="firstName" />
+                                <input 
+                                type="text" 
+                                name="firstName" 
+                                onChange={onChangeHandler} />
                             </div>
                             <div className='last'>
                                 <label htmlFor="lastName">Last name</label>
-                                <input type="text" name="lastName" />
+                                <input 
+                                type="text" 
+                                name="lastName" 
+                                onChange={onChangeHandler}/>
                             </div>
                         </div>
                         <label htmlFor="email">Email</label>
-                        <input type="text" name="email" />
+                        <input type="text" name="email" onChange={onChangeHandler} />
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" />
+                        <input type="password" name="password" onChange={onChangeHandler} />
                         <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input type="password" name="confirmPassword" />
+                        <input type="password" name="confirmPassword" onChange={onChangeHandler} />
                         <button>Create an Account</button>
                     </form>
 

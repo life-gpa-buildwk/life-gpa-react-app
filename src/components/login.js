@@ -15,6 +15,9 @@ const Login = props => {
     const handleSubmit = (event) => {
         // use action from loginActions.js to login 
         //something like login(loginInfo)
+
+        // if is logged in then
+            //push props.history(/dashboard)
     }
 
     return (
