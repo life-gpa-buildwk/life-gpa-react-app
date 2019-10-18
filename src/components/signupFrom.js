@@ -26,7 +26,7 @@ const SignupForm = (props) => {
                         <input type="password" name="password" />
                         <label htmlFor="confirmPassword">Confirm Password</label>
                         <input type="password" name="confirmPassword" />
-                        <button>Sign Up</button>
+                        <button>Create an Account</button>
                     </form>
 
                 </div>
