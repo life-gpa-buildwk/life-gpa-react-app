@@ -2,7 +2,7 @@
     @include form-container(528px, 614px);
 
     h1 {
-            margin-top:24px;
+        margin-top: 24px;
 
         @include form-header(111px, 38px);
     }
@@ -13,12 +13,13 @@
 
     div.align {
         margin-left: 32px;
-        margin-top:24px;
+        margin-top: 24px;
     }
 
-    .signup-form{
+    .signup-form {
         padding-top: 24px;
     }
+
     form {
         display: flex;
         flex-flow: column nowrap;
@@ -58,9 +59,9 @@
 }
 
 div.name {
-    display:flex;
+    display: flex;
     flex-flow: row nowrap;
-    
+
 
     .first {
         display: flex;
@@ -78,8 +79,19 @@ div.name {
 
         input {
             width: 224px;
-            margin-left:16px;
+            margin-left: 16px;
         }
     }
 
+}
+
+input[type=text] {
+    font-size: 1.2rem;
+    padding-left: 10px;
+
+}
+
+input[type=password] {
+    font-size: 2rem;
+    padding-left: 10px;
 }
