@@ -1,20 +1,23 @@
 import React from "react";
-import GPA from "./Components/CardComponents/GPACard.js";
-import Progress from "./Components/CardComponents/ProgressCard.js";
-import Streaks from "./Components/CardComponents/StreaksCard.js";
+import GPA from "./components/CardComponents/GPACard";
+import Progress from "./components/CardComponents/ProgressCard.js";
+import Streaks from "./components/CardComponents/StreaksCard.js";
 
 import './styles/index.scss';
 import "./App.css";
 
-export default function App() {
+function App(props) {
   return (
     <div className="Desktop-Dashboard">
       <div className="App-Header" />
-      <div className="App">
+      {/* <div className="App"> */}
         <GPA />
         <Progress />
         <Streaks />
-      </div>
+      {/* </div> */}
     </div>
+
   );
 }
+
+export default App;
