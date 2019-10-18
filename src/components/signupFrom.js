@@ -9,7 +9,26 @@ const SignupForm = (props) => {
                     <p>Create a free account and start making the grade today.
                      Already have an account? <span> Log in</span>
                     </p>
-                    
+                    <form>
+                        <div className="name">
+                            <div className="first">
+                                <label htmlFor="firstName">First name</label>
+                                <input type="text" name="firstName" />
+                            </div>
+                            <div className='last'>
+                                <label htmlFor="lastName">Last name</label>
+                                <input type="text" name="lastName" />
+                            </div>
+                        </div>
+                        <label htmlFor="email">Email</label>
+                        <input type="text" name="email" />
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name="password" />
+                        <label htmlFor="confirmPassword">Confirm Password</label>
+                        <input type="password" name="confirmPassword" />
+                        <button>Sign Up</button>
+                    </form>
+
                 </div>
             </div>
         </div>
