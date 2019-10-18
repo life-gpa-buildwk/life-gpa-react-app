@@ -1,0 +1,14 @@
+.signup-container {
+    margin-left: 32px;
+      @include form-container(528px,614px);
+      h1{
+          @include form-header(111px,38px);
+      }
+      p{
+          @include form-subheader(464px,52px);
+      }
+
+      div.align{
+          margin-left:32px;
+      }
+}

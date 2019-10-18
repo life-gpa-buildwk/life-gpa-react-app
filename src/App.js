@@ -5,6 +5,7 @@ import Progress from "./components/CardComponents/ProgressCard.js";
 import Streaks from "./components/CardComponents/StreaksCard.js";
 import Login from "./components/login"
 import LoginNav from "./components/Navs/loginNav";
+import Signup from "./components/signupFrom"
 
 import './styles/index.scss';
 import "./App.css";
@@ -15,6 +16,7 @@ function App(props) {
       <LoginNav />
       <div className="login-container">
         <Route exact path='/login' component={Login} />
+        <Route exact path='/signup'component={Signup} />
       </div>
 
         <footer>
