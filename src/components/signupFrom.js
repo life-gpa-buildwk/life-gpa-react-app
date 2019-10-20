@@ -1,26 +1,50 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createAccount } from "../actions/signupAction";
+
 
 const SignupForm = (props) => {
 
     const [userInfo, setUserInfo] = useState({
-            userAttributes:
-            {
-                username: "",
-                password: "",
-                fullname: "",
-                email: "",
-                userImgUrl: ""
-            }
-        })
+        username: "",
+        password: "",
+        email: "",
+        userImgUrl: "",
+        firstName: "",
+        lastName: "",
+    })
 
-    const onChangeHandler = (e) =>{
-        setUserInfo({ ...userInfo, [e.target.name]: e.target.value })
+    const onChangeHandler = (e) => {
+        setUserInfo({
+            ...userInfo,
+            [e.target.name]: e.target.value
+
+        })
     }
 
-    const handleSubmit = () => {
-        // use action in signupaction js
+    useEffect(() => {
+        if (props.isCreated) {
+            console.log('hello');
+            props.history.push('login');
+        }
 
-        // if account is created push history to login page
+    }, [props.isCreated])
+
+    const handleSubmit = (e) => {
+        // use action in signupaction js
+        e.preventDefault();
+
+        const formatteduserInfo = {
+            ...userInfo,
+            fullname: `${userInfo.firstName} ${userInfo.lastName}`,
+            username: userInfo.email
+        }
+
+        delete formatteduserInfo.firstName;
+        delete formatteduserInfo.lastName;
+        delete formatteduserInfo.confirmPassword;
+
+        props.createAccount(formatteduserInfo);
     }
     return (
         <div className="signup-container">
@@ -30,21 +54,21 @@ const SignupForm = (props) => {
                     <p>Create a free account and start making the grade today.
                      Already have an account? <span> Log in</span>
                     </p>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="name">
                             <div className="first">
                                 <label htmlFor="firstName">First name</label>
-                                <input 
-                                type="text" 
-                                name="firstName" 
-                                onChange={onChangeHandler} />
+                                <input
+                                    type="text"
+                                    name="firstName"
+                                    onChange={onChangeHandler} />
                             </div>
                             <div className='last'>
                                 <label htmlFor="lastName">Last name</label>
-                                <input 
-                                type="text" 
-                                name="lastName" 
-                                onChange={onChangeHandler}/>
+                                <input
+                                    type="text"
+                                    name="lastName"
+                                    onChange={onChangeHandler} />
                             </div>
                         </div>
                         <label htmlFor="email">Email</label>
@@ -62,4 +86,14 @@ const SignupForm = (props) => {
     )
 }
 
-export default SignupForm
+const mapToStateProps = ({ signupReducer }) => {
+    return ({
+        isCreated: signupReducer.isCreated,
+        isCreating: signupReducer.isCreating
+    })
+};
+
+export default connect(
+    mapToStateProps,
+    { createAccount }
+)(SignupForm)

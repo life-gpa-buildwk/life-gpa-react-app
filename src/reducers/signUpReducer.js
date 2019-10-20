@@ -9,6 +9,7 @@ const initialState = {
 }
 
 export const signupReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case CREATE:
             return {

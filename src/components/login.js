@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 const Login = props => {
 
-    console.log(props)
     const [loginInfo, setLoginInfo] = useState({
         username: '',
         password: ''
@@ -13,15 +12,15 @@ const Login = props => {
 
 
     const onChange = (event) => {
-        setLoginInfo({ ...loginInfo, [event.target.name]: event.target.value });
+        setLoginInfo({ 
+            ...loginInfo, 
+            [event.target.name]: event.target.value 
+        });
     }
 
     const handleSubmit = (event) => {
-        // use action from loginActions.js to login 
-        //something like login(loginInfo)
-
-        // if is logged in then
-            //push props.history(/dashboard)
+        event.preventDefault();
+        props.login(loginInfo);
     }
 
     return (
@@ -31,14 +30,14 @@ const Login = props => {
                     <h1>Log In</h1>
                     <p>Welcome back. Don’t have an account yet? <span> Sign up </span></p>
                     <form onSubmit={handleSubmit}>
-                        <label for="username">Username</label>
+                        <label htmlfor="username">Username</label>
                         <input
                             type="text"
                             name="username"
                             onChange={onChange}
                             required />
 
-                        <label for="password">Password</label>
+                        <label htmlfor="password">Password</label>
                         <input type="password"
                             name="password"
                             onChange={onChange}
@@ -52,14 +51,15 @@ const Login = props => {
     )
 }
 
-const mapToStateProps = ({loginReducer}) => {
-    return({
-     isFetching: loginReducer.isFetching,
-    isLoggedin: loginReducer.isLoggedin
+const mapToStateProps = ({ loginReducer }) => {
+    return ({
+        isFetching: loginReducer.isFetching,
+        isLoggedIn: loginReducer.isLoggedIn,
+        user: loginReducer.user
     })
 }
 
 export default connect(
     mapToStateProps,
-    { login } 
-    )(Login);
+    { login }
+)(Login);

@@ -18,7 +18,8 @@ function App(props) {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup'component={Signup} />
       </div>
-
+      
+      {/* insert PrivateRoute  here*/}
         <footer>
           <p> <span>LifeGPA 2019</span> | Privacy | Terms & Conditions </p>
         </footer>

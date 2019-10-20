@@ -6,13 +6,16 @@ export const FETCHING = "FETCHING";
 export const login = ((loginInfo) => {
     return (dispatch) => {
         dispatch({ type: FETCHING });
+        console.log("hi")
         setTimeout(() => {
             AxiosWithAuth()
-                .get("https://lifegpa-zach-christy.herokuapp.com/api/login", loginInfo)
+                .post("https://lifegpa-zach-christy.herokuapp.com/api/login", loginInfo)
                 .then(res => {
-
+                    console.log(res.data)
                     localStorage.setItem('token', res.data.token)
                     dispatch({ type: LOGIN, payload: res.data })
+
+                    // push to dashboard route
                 })
                 .catch(err => {
                     console.log(err);
