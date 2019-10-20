@@ -10,6 +10,7 @@ export const login = ((loginInfo) => {
             AxiosWithAuth()
                 .get("https://lifegpa-zach-christy.herokuapp.com/api/login", loginInfo)
                 .then(res => {
+
                     localStorage.setItem('token', res.data.token)
                     dispatch({ type: LOGIN, payload: res.data })
                 })
