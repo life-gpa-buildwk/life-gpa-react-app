@@ -4,11 +4,11 @@ const initialState = {
     isLoggedIn: false
 }
 
-export const UserLoginConstants = (state=initialState, action) => {
+export const userLoginConstants = (state=initialState, action) => {
     switch (action.type) {
         case LOGIN:
-            return {...state, isLoggedIn = true, isFetching = false};
+            return {...state, isLoggedIn:true, isFetching:false};
         case FETCHING:
-            return {...state, isFetching = true};
+            return {...state, isFetching:true};
     }
 }

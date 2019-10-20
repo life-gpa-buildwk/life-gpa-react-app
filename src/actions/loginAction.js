@@ -4,8 +4,11 @@ export const LOGIN = "LOGIN";
 export const FETCHING = "FETCHING";
 
 export const login = ((loginInfo) => {
-    dispatch({type:FETCHING});
     return (dispatch) => {
+            dispatch({
+                type: FETCHING
+            });
+
         setTimeout(() => {
             AxiosWithAuth()
             .get("someBack end", loginInfo)

@@ -17,6 +17,11 @@ const SignupForm = (props) => {
         setUserInfo({ ...userInfo, [e.target.name]: e.target.value })
     }
 
+    const handleSubmit = () => {
+        // use action in signupaction js
+
+        // if account is created push history to login page
+    }
     return (
         <div className="signup-container">
             <div className="signup-form">
