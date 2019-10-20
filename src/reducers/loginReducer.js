@@ -12,6 +12,7 @@ export const loginReducer = (state = initialState, action) => {
             return {...state, isLoggedIn: true, isFetching: false };
         case FETCHING:
             return {...state, isFetching: true };
-
+        default:
+            return state;
     }
 }

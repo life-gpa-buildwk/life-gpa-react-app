@@ -1,22 +1,27 @@
 import {
     CREATE,
     CREATING
-} from '../actions/signupAction'
+} from '../actions/signupAction';
 
 const initialState = {
     isCreated: false,
     isCreating: false
 }
 
-export const createAccount = (state = initialState, action) => {
+export const signupReducer = (state = initialState, action) => {
     switch (action.type) {
         case CREATE:
             return {
-                ...state, isCreated:true, isCreating:false
+                ...state,
+                isCreated: true,
+                isCreating: false
             };
         case CREATING:
             return {
-                ...state, isCreating:true
+                ...state,
+                isCreating: true
             };
+        default:
+            return state;
     }
 }

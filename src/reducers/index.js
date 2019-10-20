@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import {
-    userLoginConstants
+    loginReducer
 } from '../reducers/loginReducer'
-import {createAccount} from '../reducers/signUpReducer'
+import { signupReducer } from '../reducers/signUpReducer'
 
 export default combineReducers({
-    createAccount,
-    userLoginConstants
+    signupReducer,
+    loginReducer
 });
