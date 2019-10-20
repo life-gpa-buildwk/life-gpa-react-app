@@ -6,7 +6,6 @@ export const FETCHING = "FETCHING";
 export const login = ((loginInfo) => {
     return (dispatch) => {
         dispatch({ type: FETCHING });
-
         setTimeout(() => {
             AxiosWithAuth()
                 .get("https://lifegpa-zach-christy.herokuapp.com/api/login", loginInfo)
