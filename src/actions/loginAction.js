@@ -4,18 +4,19 @@ export const LOGIN = "LOGIN";
 export const FETCHING = "FETCHING";
 
 export const login = ((loginInfo) => {
-    dispatch({type:FETCHING});
     return (dispatch) => {
+        dispatch({ type: FETCHING });
+
         setTimeout(() => {
             AxiosWithAuth()
-            .get("someBack end", loginInfo)
-            .then(res => {
-                dispatch({type:LOGIN, payload:res.data})
-            })
-            .catch(err => {
-                console.log(err);
-            })
-        },1000)
+                .get("https://lifegpa-zach-christy.herokuapp.com/api/login", loginInfo)
+                .then(res => {
+                    localStorage.setItem('token', res.data.token)
+                    dispatch({ type: LOGIN, payload: res.data })
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }, 1000)
     }
 })
-

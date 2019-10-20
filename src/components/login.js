@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { login } from "../actions/loginAction";
+import { connect } from "react-redux";
 
 const Login = props => {
+
+    console.log(props)
     const [loginInfo, setLoginInfo] = useState({
         username: '',
         password: ''
@@ -48,5 +52,14 @@ const Login = props => {
     )
 }
 
+const mapToStateProps = ({loginReducer}) => {
+    return({
+     isFetching: loginReducer.isFetching,
+    isLoggedin: loginReducer.isLoggedin
+    })
+}
 
-export default Login;
+export default connect(
+    mapToStateProps,
+    { login } 
+    )(Login);

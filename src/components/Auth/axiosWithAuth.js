@@ -1,6 +1,5 @@
 import Axios from 'axios';
-
-export const AxiosWithAuth = () => {
+const AxiosWithAuth = () => {
     const token = localStorage.getItem('token');
 
     return Axios.create({
@@ -10,3 +9,4 @@ export const AxiosWithAuth = () => {
         }
     })
 }
+export default AxiosWithAuth;
