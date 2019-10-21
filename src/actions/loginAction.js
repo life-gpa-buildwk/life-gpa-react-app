@@ -1,17 +1,25 @@
 import AxiosWithAuth from '../components/Auth/axiosWithAuth';
 
 export const LOGIN = "LOGIN";
-export const onChange = "ONCHANGE"
-export
+export const FETCHING = "FETCHING";
 
-export const login = ((username, password) => {
+export const login = ((loginInfo) => {
     return (dispatch) => {
+        dispatch({ type: FETCHING });
+        console.log("hi")
         setTimeout(() => {
             AxiosWithAuth()
-            .get("someBack end")
-            .then(res => {
+                .post("https://lifegpa-zach-christy.herokuapp.com/api/login", loginInfo)
+                .then(res => {
+                    console.log(res.data)
+                    localStorage.setItem('token', res.data.token)
+                    dispatch({ type: LOGIN, payload: res.data })
 
-            })
-        },1000)
+                    // push to dashboard route
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        }, 1000)
     }
 })

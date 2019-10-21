@@ -1,0 +1,40 @@
+@mixin form-container($width, $height) {
+    width:$width;
+    height:$height;
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin: auto auto;
+}
+
+@mixin form-header($width,$height) {
+    margin-top: 24px;
+    width:$width;
+    height:$height;
+    font-family: OpenSans;
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.85px;
+    color: #363636;
+}
+
+@mixin form-subheader($width, $height) {
+
+    width:$width;
+    height:$height;
+    font-family: OpenSans;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.44;
+    letter-spacing: 0.54px;
+    color: #363636;
+
+    span {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import {AxiosWithAuth} from './axiosWithAuth';
+import { login } from "../actions/loginAction";
+import { connect } from "react-redux";
 
 const Login = props => {
+
     const [loginInfo, setLoginInfo] = useState({
         username: '',
         password: ''
@@ -10,42 +12,54 @@ const Login = props => {
 
 
     const onChange = (event) => {
-        setLoginInfo({...loginInfo,[event.target.name]: event.target.value });
+        setLoginInfo({ 
+            ...loginInfo, 
+            [event.target.name]: event.target.value 
+        });
     }
 
     const handleSubmit = (event) => {
-        // console.log(loginInfo);
-        // event.preventDefault();
-        // AxiosWithAuth()
-        // .post('/login',loginInfo)
-        // .then(res => {
-        //     localStorage.setItem('token', res.data.payload);
-        //     props.history.push('friendsList');
-        // })
-        // .catch(err => console.log(err));
+        event.preventDefault();
+        props.login(loginInfo);
     }
 
     return (
-        <form onSubmit={handleSubmit}> 
-            <label for="username"><b>Username</b></label>
-            <input
-                type="text"
-                placeholder="Enter Username"
-                name="username"
-                onChange={onChange}
-                required />
+        <div className='login-box'>
+            <div className="login-form">
+                <div>
+                    <h1>Log In</h1>
+                    <p>Welcome back. Don’t have an account yet? <span> Sign up </span></p>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlfor="username">Username</label>
+                        <input
+                            type="text"
+                            name="username"
+                            onChange={onChange}
+                            required />
 
-            <label for="password"><b>Password</b></label>
-            <input type="password"
-                placeholder="Enter Password"
-                name="password"
-                onChange={onChange}
-                required />
+                        <label htmlfor="password">Password</label>
+                        <input type="password"
+                            name="password"
+                            onChange={onChange}
+                            required />
 
-            <button type="submit">Login</button>
-        </form>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     )
 }
 
+const mapToStateProps = ({ loginReducer }) => {
+    return ({
+        isFetching: loginReducer.isFetching,
+        isLoggedIn: loginReducer.isLoggedIn,
+        user: loginReducer.user
+    })
+}
 
-export default Login;
+export default connect(
+    mapToStateProps,
+    { login }
+)(Login);
