@@ -1,27 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import {onChange, setCategory, dayClick} from '../actions/addGoalAction';
+import { onChange, setCategory, dayClick, isPick } from '../actions/addGoalAction';
 
 
 const AddGoal = props => {
-
-    const[days] = useState(["Sun", "M", "T","W", "Th", "F", "Sat"]);
-    const[goalData,setGoalData] = useState({
-        lifeCategory:"",
-        goal:""
-    });
-
-    const onChange = (event) => {
-        setGoalData({
-            ...goalData,
-            [event.target.name]: event.target.value
-        });
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    }
-
 
     return (
         <div className="add-container">
@@ -47,13 +29,16 @@ const AddGoal = props => {
                         <input type="textarea" name="goal" onChange={props.onChange} />
                         <label htmlFor="remindMe">Remind me on</label>
                         <div className="days">
-                            {days.map(el => <button onClick={(e) => {
+                            {props.days.map(el => <button onClick={(e) => {
                                 e.preventDefault();
-                                props.dayClick(e.target.innerHTML);
+                            
+                                props.isPick(e.target.innerHTML);
+                                props.dayClick();
+
                             }}
-                            name="remindMe" 
-                            className="reminder">{el}
-                            </button> )}
+                                name="remindMe"
+                                className={`reminder ${el.isPicked ? "picked" : ""}`}>{el.day}
+                            </button>)}
                         </div>
 
                         <button className="submit-goal">Add Goal</button>
@@ -65,16 +50,20 @@ const AddGoal = props => {
     )
 }
 
-const mapToStateProp = ({addGoalReducer}) => {
-    return{
-    category: addGoalReducer.lifeCategory,
-    goal: addGoalReducer.goal
+const mapToStateProp = ({ addGoalReducer }) => {
+    return {
+        category: addGoalReducer.lifeCategory,
+        goal: addGoalReducer.goal,
+        days: addGoalReducer.dayKey
     }
 }
 
 export default connect(
     mapToStateProp,
-    { onChange,
-    setCategory,
-    dayClick }
+    {
+        onChange,
+        setCategory,
+        dayClick,
+        isPick
+    }
 )(AddGoal);

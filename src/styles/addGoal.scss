@@ -60,6 +60,10 @@
                 cursor: pointer;
             }
         }
+        button.reminder.picked{
+            background: $orange-highlight !important;
+        }
+
         button.submit-goal {
             width: 114px;
             height: 48px;
@@ -81,4 +85,8 @@
     display: flex;
     flex-flow: row wrap;
     // justify-content: space-between;
+}
+
+.picked{
+    background: $orange-highlight;
 }
