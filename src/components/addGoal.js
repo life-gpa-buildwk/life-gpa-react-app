@@ -1,5 +1,4 @@
 import React from 'react'
-import { directive } from '@babel/types';
 
 const AddGoal = props => {
     return (
@@ -23,17 +22,19 @@ const AddGoal = props => {
                             <option value="Sprituality">Sprituality</option>
                         </select>
                         <label htmlFor="goal">Goal</label>
-                        <input type="textarea" name="goal"  />
+                        <textarea type="textarea" name="goal" />
                         <label htmlFor="remind-me">Remind me on</label>
-                        <button name="remind-me" className="reminder">Sun</button>
-                        <button name="remind-me" className="reminder">M</button>
-                        <button name="remind-me" className="reminder">T</button>
-                        <button name="remind-me" className="reminder">W</button>
-                        <button name="remind-me" className="reminder">Th</button>
-                        <button name="remind-me" className="reminder">F</button>
-                        <button name="remind-me" className="reminder">Sat</button>
-                       
-                        <button>addGoal</button>
+                        <div className="days">
+                            <button name="remind-me" className="reminder">Sun</button>
+                            <button name="remind-me" className="reminder">M</button>
+                            <button name="remind-me" className="reminder">T</button>
+                            <button name="remind-me" className="reminder">W</button>
+                            <button name="remind-me" className="reminder">Th</button>
+                            <button name="remind-me" className="reminder">F</button>
+                            <button name="remind-me" className="reminder">Sat</button>
+                        </div>
+
+                        <button className="submit-goal">Add Goal</button>
                     </form>
 
                 </div>
@@ -41,3 +42,5 @@ const AddGoal = props => {
         </div>
     )
 }
+
+export default AddGoal;

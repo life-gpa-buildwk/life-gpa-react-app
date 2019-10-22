@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     min-height: 900px;
-    background: #e2e2e2;
+    background: $orange;
     flex-flow: column;
     footer {
         width: 100%;
@@ -27,4 +27,8 @@
             }
         }
     }
+}
+
+html* {
+    font-family: 'Open Sans', sans-serif;
 }
