@@ -1,6 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { connect } from 'react-redux';
+import {onChange, setCategory, dayClick} from '../actions/addGoalAction';
+
 
 const AddGoal = props => {
+
+    const[days] = useState(["Sun", "M", "T","W", "Th", "F", "Sat"]);
+    const[goalData,setGoalData] = useState({
+        lifeCategory:"",
+        goal:""
+    });
+
+    const onChange = (event) => {
+        setGoalData({
+            ...goalData,
+            [event.target.name]: event.target.value
+        });
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
+
     return (
         <div className="add-container">
             <div className="add-form">
@@ -10,8 +32,8 @@ const AddGoal = props => {
                         Create a habit or long term goal and choose what days you’d like to work towards it.
                     </p>
                     <form>
-                        <label htmlFor="life-category">Life Category</label>
-                        <select name="life-category">
+                        <label htmlFor="lifeCategory">Life Category</label>
+                        <select name="lifeCategory" onClick={(e) => props.setCategory(e.target.value)}>
                             <option>Category</option>
                             <option value="health">Health</option>
                             <option value="career">Career</option>
@@ -22,16 +44,16 @@ const AddGoal = props => {
                             <option value="Sprituality">Sprituality</option>
                         </select>
                         <label htmlFor="goal">Goal</label>
-                        <textarea type="textarea" name="goal" />
-                        <label htmlFor="remind-me">Remind me on</label>
+                        <input type="textarea" name="goal" onChange={props.onChange} />
+                        <label htmlFor="remindMe">Remind me on</label>
                         <div className="days">
-                            <button name="remind-me" className="reminder">Sun</button>
-                            <button name="remind-me" className="reminder">M</button>
-                            <button name="remind-me" className="reminder">T</button>
-                            <button name="remind-me" className="reminder">W</button>
-                            <button name="remind-me" className="reminder">Th</button>
-                            <button name="remind-me" className="reminder">F</button>
-                            <button name="remind-me" className="reminder">Sat</button>
+                            {days.map(el => <button onClick={(e) => {
+                                e.preventDefault();
+                                props.dayClick(e.target.innerHTML);
+                            }}
+                            name="remindMe" 
+                            className="reminder">{el}
+                            </button> )}
                         </div>
 
                         <button className="submit-goal">Add Goal</button>
@@ -43,4 +65,16 @@ const AddGoal = props => {
     )
 }
 
-export default AddGoal;
+const mapToStateProp = ({addGoalReducer}) => {
+    return{
+    category: addGoalReducer.lifeCategory,
+    goal: addGoalReducer.goal
+    }
+}
+
+export default connect(
+    mapToStateProp,
+    { onChange,
+    setCategory,
+    dayClick }
+)(AddGoal);
