@@ -7,6 +7,7 @@ import Login from "./components/login"
 import LoginNav from "./components/Navs/loginNav";
 import Signup from "./components/signupFrom"
 import AddGoal from "./components/addGoal";
+import GetStarted from "./components/letsGetStarted";
 
 import './styles/index.scss';
 import "./App.css";
@@ -19,6 +20,7 @@ function App(props) {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup'component={Signup} />
         <Route exact path='/addGoal' component={AddGoal} />
+        <Route excat path='/getStarted' component={GetStarted} />
       </div>
       
       {/* insert PrivateRoute  here*/}
