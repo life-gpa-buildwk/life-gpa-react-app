@@ -51,7 +51,6 @@ export const addGoalReducer = (state = initState, action) => {
                 lifeCategory: action.payload
             }
         case ISPICKED:
-            console.log("payload: ", state)
             return {
                 ...state,
                 dayKey: state.dayKey.map(el => {

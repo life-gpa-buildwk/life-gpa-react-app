@@ -46,6 +46,7 @@
             border: solid 1px #979797;
         }
         button.reminder {
+            font-weight: 600;
             width: 56px;
             height: 56px;
             font-family: 'Open Sans', sans-serif;
@@ -62,6 +63,8 @@
         }
         button.reminder.picked{
             background: $orange-highlight !important;
+            border: 2px solid $orange-highlight;
+
         }
 
         button.submit-goal {
