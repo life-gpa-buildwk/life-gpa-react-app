@@ -4,6 +4,8 @@ import Login from "./components/login"
 import LoginNav from "./components/Navs/loginNav";
 import Signup from "./components/signupFrom"
 import Dashboard from "./components/dashboard";
+import AddGoal from "./components/addGoal";
+import GetStarted from "./components/letsGetStarted";
 
 import './styles/index.scss';
 import "./App.css";

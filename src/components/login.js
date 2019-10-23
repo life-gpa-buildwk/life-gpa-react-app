@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { login } from "../actions/loginAction";
 import { connect } from "react-redux";
 import LoginNav from "./Navs/loginNav";
@@ -12,6 +12,9 @@ const Login = props => {
     }
     );
 
+    let loginRef = useRef(props.user.id);
+    loginRef.current = props.user.id;
+
 
     const onChange = (event) => {
         setLoginInfo({
@@ -23,6 +26,9 @@ const Login = props => {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.login(loginInfo);
+        setTimeout(()=>{
+            props.history.push(`/dashboard/${loginRef.current}`);
+        },3000)
     }
 
     return (
