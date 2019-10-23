@@ -15,13 +15,10 @@ import "./App.css";
 function App(props) {
   return (
     <div className="App">
-      <LoginNav />
-      <div className="login-container">
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup'component={Signup} />
         <Route exact path='/addGoal' component={AddGoal} />
         <Route excat path='/getStarted' component={GetStarted} />
-      </div>
       
       {/* insert PrivateRoute  here*/}
         <footer>
