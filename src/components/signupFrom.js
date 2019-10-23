@@ -61,22 +61,24 @@ const SignupForm = (props) => {
                                 <input
                                     type="text"
                                     name="firstName"
-                                    onChange={onChangeHandler} />
+                                    onChange={onChangeHandler}
+                                    required />
                             </div>
                             <div className='last'>
                                 <label htmlFor="lastName">Last name</label>
                                 <input
                                     type="text"
                                     name="lastName"
-                                    onChange={onChangeHandler} />
+                                    onChange={onChangeHandler}
+                                    required />
                             </div>
                         </div>
                         <label htmlFor="email">Email</label>
-                        <input type="text" name="email" onChange={onChangeHandler} />
+                        <input type="text" name="email" onChange={onChangeHandler} required/>
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" onChange={onChangeHandler} />
+                        <input type="password" name="password" onChange={onChangeHandler} required />
                         <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input type="password" name="confirmPassword" onChange={onChangeHandler} />
+                        <input type="password" name="confirmPassword" onChange={onChangeHandler} required />
                         <button>Create an Account</button>
                     </form>
 
