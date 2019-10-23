@@ -1,0 +1,105 @@
+.get-started-container {
+    @include form-container(528px, 677px);
+    h1 {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        @include form-header(240px, 38px);
+    }
+    section.p2 {
+        margin-top: 27px;
+        width: 464px;
+        height: 104px;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.63;
+        letter-spacing: 0.48px;
+        p {
+            margin: 10px 0px 20px;
+            font-family: $main-font;
+        }
+    }
+    section.before {
+        width: 464px;
+        height: 52px;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.63;
+        letter-spacing: 0.48px;
+        color: #363636;
+    }
+    section.key-points {
+        margin-top: 30px;
+        height: 200px;
+        ol {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+        li {
+            margin: 10px 0px;
+            width: 490px;
+            font-family: $main-font;
+            font-size: 16px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.48px;
+            color: #393939;
+            span {
+                width: 60px;
+                height: 50px;
+                background: $orange-highlight;
+                border-radius: 2rem;
+                padding: 5px;
+            }
+        }
+    }
+    div.align {
+        width: 90%;
+        margin: 24px auto;
+    }
+    button.to-dash {
+        width: 202px;
+        height: 48px;
+        border-radius: 6px;
+        background-color: $dark-orange;
+        color: white;
+        font-family: $main-font;
+        transition: 500ms;
+        &:hover {
+            cursor: pointer;
+            border: 2px outset $dark-orange;
+        }
+    }
+}
+
+.center {
+    width: 272px;
+    display: flex;
+    margin: 20px auto;
+    justify-content: space-evenly;
+    button.report-option {
+        width: 80px;
+        height: 80px;
+        border-radius: 6px;
+        border: solid 1px #595959;
+        background: white;
+        transition: 500ms;
+        &:hover {
+            background: $orange-highlight;
+            border: 2px solid $orange-highlight;
+            cursor: pointer;
+        }
+    }
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+}

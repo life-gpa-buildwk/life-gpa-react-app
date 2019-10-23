@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createAccount } from "../actions/signupAction";
+import SignupNav from "./Navs/signupNav";
 
 
 const SignupForm = (props) => {
@@ -45,13 +46,19 @@ const SignupForm = (props) => {
         delete formatteduserInfo.confirmPassword;
 
         props.createAccount(formatteduserInfo);
+
+        props.history.push("/getStarted");
     }
     return (
-        <div className="signup-container">
-            <div className="signup-form">
-                <div className="align">
-                    <h1>Sign Up</h1>
-                    <p>Create a free account and start making the grade today.
+        <>
+            <SignupNav />
+
+            <div className="login-container">
+                <div className="signup-container">
+                    <div className="signup-form">
+                        <div className="align">
+                            <h1>Sign Up</h1>
+                            <p>Create a free account and start making the grade today.
                      Already have an account? <span> Log in</span>
                     </p>
                     <form onSubmit={handleSubmit}>
@@ -82,9 +89,12 @@ const SignupForm = (props) => {
                         <button>Create an Account</button>
                     </form>
 
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

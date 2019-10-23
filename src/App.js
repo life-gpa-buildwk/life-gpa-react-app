@@ -1,11 +1,9 @@
 import React from "react";
 import { Route } from 'react-router-dom';
-import GPA from "./components/CardComponents/GPACard";
-import Progress from "./components/CardComponents/ProgressCard.js";
-import Streaks from "./components/CardComponents/StreaksCard.js";
 import Login from "./components/login"
 import LoginNav from "./components/Navs/loginNav";
 import Signup from "./components/signupFrom"
+import Dashboard from "./components/dashboard";
 
 import './styles/index.scss';
 import "./App.css";
@@ -13,11 +11,10 @@ import "./App.css";
 function App(props) {
   return (
     <div className="App">
-      <LoginNav />
-      <div className="login-container">
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup'component={Signup} />
-      </div>
+        <Route exact path='/addGoal' component={AddGoal} />
+        <Route excat path='/getStarted' component={GetStarted} />
       
       {/* insert PrivateRoute  here*/}
         <footer>

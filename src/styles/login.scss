@@ -1,14 +1,11 @@
 .login-box {
     @include form-container(528px, 402px);
-
     h1 {
         @include form-header(89px, 38px);
     }
-
     p {
         @include form-subheader(464px, 26px);
     }
-
     .login-form {
         display: flex;
         flex-flow: column nowrap;
@@ -16,15 +13,12 @@
         height: 402px;
         border-radius: 12px;
         background-color: #ffffff;
-
         div {
             margin-left: 32px;
-
             form {
                 display: flex;
                 flex-flow: column nowrap;
                 justify-content: space-between;
-
                 label {
                     margin-top: 24px;
                     width: 200px;
@@ -38,21 +32,25 @@
                     letter-spacing: 0.42px;
                     color: #363636;
                 }
-
                 input {
                     width: 464px;
                     height: 48px;
                     border-radius: 6px;
                     border: solid 1px #979797;
                 }
-
                 button {
                     width: 114px;
                     height: 48px;
                     border-radius: 6px;
-                    background-color: #969696;
                     margin: 40px 32px 24px 350px;
+                    background: $dark-orange;
+                    border: 2px outset $orange;
                     color: white;
+                    transition: 500ms;
+                    &:hover {
+                        cursor: pointer;
+                        border: 2px outset $dark-orange;
+                    }
                 }
             }
         }
@@ -61,50 +59,5 @@
 
 .login-container {
     margin: auto auto;
-    background-color: #e2e2e2;
-}
-
-.nav-container {
-    width: 100%;
-    height: 72px;
-    background-color: #f7f7f7;
-
-    nav {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        margin: 23px 260px;
-
-        h1 {
-            width: 98px;
-            height: 33px;
-            font-family: OpenSans;
-            font-size: 24px;
-            font-weight: bold;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: 0.73px;
-            color: #393939;
-        }
-
-        .right-nav {
-            display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-
-            a {
-                padding: 0px 22px;
-                cursor: pointer;
-                font-family: OpenSans;
-                font-size: 16px;
-                font-weight: normal;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: 0.48px;
-                color: #393939;
-            }
-        }
-    }
+    background-color: $orange;
 }
