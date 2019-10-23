@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { login } from "../actions/loginAction";
 import { connect } from "react-redux";
+import LoginNav from "./Navs/loginNav";
+
 
 const Login = props => {
 
@@ -12,9 +14,9 @@ const Login = props => {
 
 
     const onChange = (event) => {
-        setLoginInfo({ 
-            ...loginInfo, 
-            [event.target.name]: event.target.value 
+        setLoginInfo({
+            ...loginInfo,
+            [event.target.name]: event.target.value
         });
     }
 
@@ -24,30 +26,39 @@ const Login = props => {
     }
 
     return (
-        <div className='login-box'>
-            <div className="login-form">
-                <div>
-                    <h1>Log In</h1>
-                    <p>Welcome back. Don’t have an account yet? <span> Sign up </span></p>
-                    <form onSubmit={handleSubmit}>
-                        <label htmlfor="username">Username</label>
-                        <input
-                            type="text"
-                            name="username"
-                            onChange={onChange}
-                            required />
+        <>
+            <LoginNav />
 
-                        <label htmlfor="password">Password</label>
-                        <input type="password"
-                            name="password"
-                            onChange={onChange}
-                            required />
+            <div className="login-container">
 
-                        <button type="submit">Login</button>
-                    </form>
+                <div className='login-box'>
+
+                    <div className="login-form">
+                        <div>
+                            <h1>Log In</h1>
+                            <p>Welcome back. Don’t have an account yet? <span> Sign up </span></p>
+                            <form onSubmit={handleSubmit}>
+                                <label htmlfor="username">Username</label>
+                                <input
+                                    type="text"
+                                    name="username"
+                                    onChange={onChange}
+                                    required />
+
+                                <label htmlfor="password">Password</label>
+                                <input type="password"
+                                    name="password"
+                                    onChange={onChange}
+                                    required />
+
+                                <button type="submit">Login</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-        </div>
+        </>
     )
 }
 
