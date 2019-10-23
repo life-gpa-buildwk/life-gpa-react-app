@@ -19,6 +19,8 @@ function App(props) {
         <Route excat path='/getStarted' component={GetStarted} />
       
       {/* insert PrivateRoute  here*/}
+        <Route excat path='/dashboard' component={Dashboard} />
+
         <footer>
           <p> <span>LifeGPA 2019</span> | Privacy | Terms & Conditions </p>
         </footer>
