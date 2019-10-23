@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const LoginNav = () => {
     return (
@@ -11,8 +11,8 @@ const LoginNav = () => {
                     <a>About</a>
                     <a>Contact</a>
                     <a>Support</a>
-                    <Link to={'/signup'}>
-                        <a>Sign Up</a>
+                    <Link to={'/login'}>
+                        <a>Log in</a>
                     </Link>
                 </div>
             </nav>

@@ -11,11 +11,10 @@ import "./App.css";
 function App(props) {
   return (
     <div className="App">
-      <LoginNav />
-      <div className="login-container">
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup'component={Signup} />
-      </div>
+        <Route exact path='/addGoal' component={AddGoal} />
+        <Route excat path='/getStarted' component={GetStarted} />
       
       {/* insert PrivateRoute  here*/}
         <footer>
