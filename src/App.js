@@ -5,11 +5,8 @@ import LoginNav from "./components/Navs/loginNav";
 import Signup from "./components/signupFrom"
 import Dashboard from "./components/dashboard";
 import GetStarted from "./components/letsGetStarted";
-<<<<<<< HEAD
 import { BrowserRouter } from 'react-router-dom';
-=======
 import PrivateRoute from "./components/Auth/privateRoute"
->>>>>>> 8e879e453e578eb1d1b1b75d2ca5539efd537e16
 
 import './styles/index.scss';
 import "./App.css";
