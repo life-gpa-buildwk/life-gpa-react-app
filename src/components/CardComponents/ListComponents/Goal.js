@@ -1,13 +1,12 @@
 import React from "react";
 import {
-  PanelGroup,
-  Panel,
+  CardGroup,
+  Card,
   Button,
   ButtonToolbar,
   ListGroup,
   ListGroupItem
 } from "react-bootstrap";
-import "./todostyles.css";
 
 import { AddGoal } from "./AddGoal.js";
 import { EditGoal } from "./EditGoal.js";
@@ -90,15 +89,15 @@ class GoalSection extends React.Component {
           onAdd={this.addGoal}
           onAddModal={this.showAddModal}
         />
-        <PanelGroup accordion id="goals">
+        <CardGroup accordion id="goals">
           {goals.map((goal, index) => (
-            <Panel eventKey={index} key={index}>
-              <Panel.Heading>
-                <Panel.Title className="title" toggle>
+            <Card eventKey={index} key={index}>
+              <Card.Heading>
+                <Card.Title className="title" toggle>
                   {goal.name}
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Body collapsible>
+                </Card.Title>
+              </Card.Heading>
+              <Card.Body collapsible>
                 <ListGroup>
                   {goal.categories.map((category, index) => (
                     <ListGroupItem key={index}>{category}</ListGroupItem>
@@ -108,11 +107,11 @@ class GoalSection extends React.Component {
                   <Button bsStyle="warning" onClick={() => {this.showEditModal(index)}}>Edit</Button>
                   <Button bsStyle="danger" onClick={() => {this.deleteGoal(index)}}>Delete</Button>
                 </ButtonToolbar>
-              </Panel.Body>
+              </Card.Body>
               <EditGoal onShow={this.state.showEdit} onEdit={this.editGoal} onEditModal={() => {this.showEditModal(currentlyEditing)}} currentlyEditing={currentlyEditing} goal={goals[currentlyEditing]} />
-            </Panel>
+            </Card>
           ))}
-        </PanelGroup>
+        </CardGroup>
       </div>
     );
   }

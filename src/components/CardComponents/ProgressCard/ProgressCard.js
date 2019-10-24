@@ -5,7 +5,7 @@ import Message from "./ProgressMessageStyles.js";
 
 const ProgressCard = () => {
   return (
-  <div className="progress-card" >
+    <div className="progress-card" >
       <Title>Daily Progress</Title>
       <Message>
         Keep it Going
@@ -18,4 +18,5 @@ const ProgressCard = () => {
     </div>
   );
 };
+
 export default ProgressCard;
