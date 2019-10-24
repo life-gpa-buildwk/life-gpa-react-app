@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { createAccount } from "../actions/signupAction";
+import { createAccount, initCategory } from "../actions/signupAction";
 import SignupNav from "./Navs/signupNav";
 
 
@@ -25,8 +25,7 @@ const SignupForm = (props) => {
 
     useEffect(() => {
         if (props.isCreated) {
-            console.log('hello');
-            props.history.push('login');
+            props.history.push('/getStarted');
         }
 
     }, [props.isCreated])
@@ -46,7 +45,10 @@ const SignupForm = (props) => {
         delete formatteduserInfo.confirmPassword;
 
         props.createAccount(formatteduserInfo);
-
+        props.initCategory({
+            categoryTitle: "Health",
+            color: "green"
+        })
         props.history.push("/getStarted");
     }
     return (
@@ -107,5 +109,5 @@ const mapToStateProps = ({ signupReducer }) => {
 
 export default connect(
     mapToStateProps,
-    { createAccount }
+    { createAccount, initCategory }
 )(SignupForm)
