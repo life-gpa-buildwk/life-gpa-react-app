@@ -2,10 +2,12 @@ import AxiosWithAuth from '../components/Auth/axiosWithAuth';
 
 export const LOGIN = "LOGIN";
 export const FETCHING = "FETCHING";
+export const ISLOADING = "ISLOADING";
 
 export const login = ((loginInfo) => {
     return (dispatch) => {
         dispatch({ type: FETCHING });
+
         console.log("hi")
         setTimeout(() => {
             AxiosWithAuth()
@@ -23,3 +25,9 @@ export const login = ((loginInfo) => {
         }, 1000)
     }
 })
+
+export const isLoading = (value) => {
+    return dispatch => {
+        dispatch({ type: ISLOADING, payload: value });
+    }
+}
