@@ -2,7 +2,7 @@
 import React from "react";
 import {
   Modal,
-  ControlLabel,
+  FormLabel,
   FormGroup,
   FormControl,
   Button
@@ -79,7 +79,7 @@ export class EditGoal extends React.Component {
         </Modal.Header>
         <Modal.Body>
           <FormGroup controlId="formControlsName">
-            <ControlLabel>Goal Name</ControlLabel>
+            <FormLabel>Goal Name</FormLabel>
             <FormControl
               type="text"
               required
@@ -89,7 +89,7 @@ export class EditGoal extends React.Component {
             />
           </FormGroup>
           <FormGroup controlId="formControlsCategories">
-            <ControlLabel>Goal Categories</ControlLabel>
+            <FormLabel>Goal Categories</FormLabel>
             <FormControl
               componentClass="textarea"
               type="text"
