@@ -8,6 +8,7 @@ import LoginNav from "./components/Navs/loginNav";
 import Signup from "./components/signupFrom"
 import AddGoal from "./components/addGoal";
 import GetStarted from "./components/letsGetStarted";
+import 'semantic-ui-css/semantic.min.css'
 
 import './styles/index.scss';
 import "./App.css";

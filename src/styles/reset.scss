@@ -147,3 +147,7 @@ table {
 button:focus {
     outline: 0;
 }
+
+input.middle:focus {
+    outline-width: 0;
+}
