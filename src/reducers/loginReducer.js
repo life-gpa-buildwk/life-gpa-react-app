@@ -1,9 +1,11 @@
-import { LOGIN, FETCHING } from '../actions/loginAction';
+import { LOGIN, FETCHING, ONCHANGEPASS, ONCHANGEUSER } from '../actions/loginAction';
 
 const initialState = {
     isFetching: false,
     isLoggedIn: false,
-    user: {}
+    user: {},
+    username: "",
+    password: ""
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -15,6 +17,16 @@ export const loginReducer = (state = initialState, action) => {
                 isFetching: false,
                 user: action.payload.user
             };
+        case ONCHANGEUSER:
+            return {
+                ...state,
+                username: action.username,
+            }
+        case ONCHANGEPASS:
+            return {
+                ...state,
+                password: action.password,
+            }
         case FETCHING:
             return {...state, isFetching: true };
         default:

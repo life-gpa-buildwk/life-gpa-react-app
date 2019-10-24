@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import Login from "./components/login"
 import LoginNav from "./components/Navs/loginNav";
 import Signup from "./components/signupFrom"
+import AddGoal from "./components/addGoal";
+import GetStarted from "./components/letsGetStarted"
 import Dashboard from "./components/dashboard";
 
 import './styles/index.scss';

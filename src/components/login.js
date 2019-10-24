@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { login } from "../actions/loginAction";
+import { login, onChangeUser, onChangePass, onSubmit } from "../actions/loginAction";
 import { connect } from "react-redux";
 import LoginNav from "./Navs/loginNav";
 
 
 const Login = props => {
 
-    const [loginInfo, setLoginInfo] = useState({
-        username: '',
-        password: ''
-    }
-    );
 
-
-    const onChange = (event) => {
-        setLoginInfo({
-            ...loginInfo,
-            [event.target.name]: event.target.value
-        });
-    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.login(loginInfo);
+        props.login({
+            username: props.username,
+            password: props.password
+        })
+        .then(res => props.history.push(`/dashboard/${props.user.id}`));
+
+        
+            // if (props.) {
+            //     props.history.push(`/dashboard/${props.user.id}`);
+            // }
+        
+
+
+
     }
 
     return (
@@ -42,13 +43,13 @@ const Login = props => {
                                 <input
                                     type="text"
                                     name="username"
-                                    onChange={onChange}
+                                    onChange={props.onChangeUser}
                                     required />
 
                                 <label htmlfor="password">Password</label>
                                 <input type="password"
                                     name="password"
-                                    onChange={onChange}
+                                    onChange={props.onChangePass}
                                     required />
 
                                 <button type="submit">Login</button>
@@ -66,11 +67,18 @@ const mapToStateProps = ({ loginReducer }) => {
     return ({
         isFetching: loginReducer.isFetching,
         isLoggedIn: loginReducer.isLoggedIn,
-        user: loginReducer.user
+        user: loginReducer.user,
+        username: loginReducer.username,
+        password: loginReducer.password
     })
 }
 
 export default connect(
     mapToStateProps,
-    { login }
+    {
+        login,
+        onChangeUser,
+        onChangePass,
+        onSubmit
+    }
 )(Login);
