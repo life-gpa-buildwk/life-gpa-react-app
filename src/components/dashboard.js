@@ -4,7 +4,7 @@ import GPA from "./CardComponents/GPACard/GPACard.js";
 import Progress from "./CardComponents/ProgressCard/ProgressCard.js";
 import Streaks from "./CardComponents/StreaksCard/StreaksCard.js";
 import Habit from "./HabitComponents/HabitCard.js";
-import GoalButton from "./TodoComponents/AddGoalButton.js";
+import Goal from "./ListComponents/Goal.js";
 
 import "../App.css";
 
@@ -28,7 +28,7 @@ const GridRows = () => {
           <Habit />
         </Grid.Column>
         <Grid.Column>
-          <GoalButton />
+          <Goal />
         </Grid.Column>
       </Grid.Row>
     </Grid>
