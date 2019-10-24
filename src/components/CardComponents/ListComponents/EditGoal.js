@@ -113,3 +113,5 @@ export class EditGoal extends React.Component {
     );
   }
 }
+
+export default EditGoal;
