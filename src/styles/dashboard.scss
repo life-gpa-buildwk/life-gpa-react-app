@@ -2,7 +2,6 @@ section.panels {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-
     .panel-item {
         margin: 20px 40px;
         width: 280px;
@@ -10,6 +9,58 @@ section.panels {
         border-radius: 12px;
         border: solid 1px #909090;
         background-color: #ffffff;
+        h1 {
+            margin: 5px 0 5px 10px;
+            font-family: $main-font;
+            font-size: 16px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.48px;
+            color: #393939;
+        }
+        h1.grade {
+            width: 103px;
+            height: 38px;
+            margin: 90px auto;
+            font-family: $main-font;
+            font-size: 28px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.85px;
+            text-align: center;
+            color: #393939;
+            display: flex;
+            align-items: center;
+        }
+        h1.dprog {
+            width: 195px;
+            height: 38px;
+            margin: 40px auto;
+            font-family: $main-font;
+            font-size: 28px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.85px;
+            text-align: center;
+            color: #393939;
+        }
+        p {
+            font-family: OpenSans;
+            font-size: 20px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: italic;
+            line-height: normal;
+            letter-spacing: 0.6px;
+            text-align: center;
+            color: #393939;
+        }
     }
 }
 
@@ -20,7 +71,7 @@ section.progress {
     margin: auto;
     width: 80%;
     align-items: flex-end;
-
+    max-width: 880px;
     .progress-report {
         width: 280px;
         height: 399px;
@@ -28,24 +79,20 @@ section.progress {
         border-radius: 12px;
         border: 1px solid black;
     }
-
     .todo-container {
         width: 480px;
         height: 450px;
         // border: 1px solid black;
         margin-right: 60px;
-
         .todo-list-header {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
             align-items: center;
-
             img {
                 width: 15.6px;
                 height: 23.1px;
             }
-
             h1 {
                 width: 206px;
                 height: 27px;
@@ -57,9 +104,7 @@ section.progress {
                 line-height: normal;
                 letter-spacing: 0.6px;
                 color: #393939;
-
             }
-
             button {
                 width: 123px;
                 height: 48px;
@@ -67,13 +112,11 @@ section.progress {
                 background-color: $dark-orange;
                 border: 1px solid $dark-orange;
                 transition: 500ms;
-
                 &:hover {
                     cursor: pointer;
                     border: 2px solid $orange-highlight;
                 }
             }
         }
-
     }
 }
