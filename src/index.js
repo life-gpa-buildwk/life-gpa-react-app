@@ -17,7 +17,6 @@ const store = createStore(reducer,
      composeEnhancers(applyMiddleware(thunk))
 );
 
-console.log(store);
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>

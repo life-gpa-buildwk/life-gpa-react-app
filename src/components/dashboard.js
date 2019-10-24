@@ -4,7 +4,7 @@ import GPA from "./CardComponents/GPACard/GPACard.js";
 import Progress from "./CardComponents/ProgressCard/ProgressCard.js";
 import Streaks from "./CardComponents/StreaksCard/StreaksCard.js";
 import Habit from "./HabitComponents/HabitCard.js";
-import Goal from "./ListComponents/Goal.js";
+import Goal from "./CardComponents/ListComponents/AddGoal";
 
 import "../App.css";
 
