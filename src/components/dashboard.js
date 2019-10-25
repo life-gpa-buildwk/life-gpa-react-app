@@ -4,38 +4,49 @@ import GPA from "./CardComponents/GPACard/GPACard.js";
 import Progress from "./CardComponents/ProgressCard/ProgressCard.js";
 import Streaks from "./CardComponents/StreaksCard/StreaksCard.js";
 import Habit from "./HabitComponents/HabitCard.js";
-<<<<<<< HEAD
-import Goal from "./CardComponents/ListComponents/AddGoal";
-=======
+
 import Goal from "./CardComponents/ListComponents/Goal.js";
->>>>>>> 8e879e453e578eb1d1b1b75d2ca5539efd537e16
 
 import "../App.css";
 
 const GridRows = () => {
-  return (
-    <Grid columns={3}>
-      <Grid.Row>
-        <Grid.Column>
-          <GPA />
-        </Grid.Column>
-        <Grid.Column>
-          <Progress />
-        </Grid.Column>
-        <Grid.Column>
-          <Streaks />
-        </Grid.Column>
-      </Grid.Row>
+    return ( <
+        Grid columns = { 3 } >
+        <
+        Grid.Row >
+        <
+        Grid.Column >
+        <
+        GPA / >
+        <
+        /Grid.Column> <
+        Grid.Column >
+        <
+        Progress / >
+        <
+        /Grid.Column> <
+        Grid.Column >
+        <
+        Streaks / >
+        <
+        /Grid.Column> <
+        /Grid.Row>
 
-      <Grid.Row>
-        <Grid.Column>
-          <Habit />
-        </Grid.Column>
-        <Grid.Column>
-          <Goal />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  );
+        <
+        Grid.Row >
+        <
+        Grid.Column >
+        <
+        Habit / >
+        <
+        /Grid.Column> <
+        Grid.Column >
+        <
+        Goal / >
+        <
+        /Grid.Column> <
+        /Grid.Row> <
+        /Grid>
+    );
 };
 export default GridRows;
